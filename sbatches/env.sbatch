@@ -8,13 +8,14 @@
 #SBATCH --time=12:00:00
 #SBATCH --job-name=createenv
 #SBATCH --mail-user=ehurt@ou.edu
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=NONE
 #SBATCH --chdir=/home/ehurt
 #
 #################################################
 
-# 
-cd /scratch/ehurt/PytorchAMD && conda create --prefix ./env requests gymnasium numpy seaborn matplotlib pandas tqdm typing pytorch ipython wget -y
+module load Anaconda3/5.3.0 
+cd /scratch/ehurt/PytorchAMD && conda create --prefix ./env requests numpy seaborn matplotlib pandas tqdm typing pytorch ipython -y
+conda install -c pytorch pytorch
 conda activate ./env
 conda info --envs
 
