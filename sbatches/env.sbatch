@@ -15,7 +15,7 @@
 
 module load Anaconda3/5.3.0 
 cd /scratch/ehurt/PytorchAMD && conda create --prefix ./env requests numpy seaborn matplotlib pandas tqdm typing pytorch ipython -y
-conda install -c pytorch pytorch
 conda activate ./env
+conda install -c pytorch pytorch
 conda info --envs
 
