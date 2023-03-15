@@ -12,10 +12,11 @@
 #SBATCH --chdir=/home/ehurt
 #
 #################################################
-
-module load Anaconda3/5.3.0 
-cd /scratch/ehurt/PytorchAMD && conda create --prefix ./env requests numpy seaborn matplotlib pandas tqdm typing pytorch ipython -y
+module load Miniconda3/4.4.10
+. /opt/oscer/software/Miniconda3/4.4.10/etc/profile.d/conda.sh
+# export CONDARC=/home/ehurt/.condarc
+CONDA_PKGS_DIRS=/scratch/ehurt/pkgs
+cd /scratch/ehurt/PytorchAMD && conda env update --prefix ./env --file ./environment.yml --prune || exit
 conda activate ./env
-conda install -c pytorch pytorch
 conda info --envs
 
