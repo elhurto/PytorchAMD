@@ -17,6 +17,7 @@ dependencies:
   - typing
   - ipython
   - ipykernel
+  - pip
   - pip:
     - gymnasium[classic-control]
 prefix: /home/ehurt/git/PytorchAMD/env
